@@ -1,0 +1,24 @@
+/* -- Common -- */
+* {
+    box-sizing: border-box;
+}
+.section-outer { // внешний блок 
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.section-inner { // внутренний блок
+    max-width: 1639px;
+    margin: 0 auto;
+}
+/* -- / Common -- */
+
+h1 {
+   @include Circle;
+}
+h2 {
+    @include Plumb-medium;
+}
+
+p {
+    @include Plumb-medium;
+}
