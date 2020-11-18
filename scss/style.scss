@@ -1,19 +1,51 @@
+/* -- Import -- */
+
+@import 'variables';
+@import 'mixins.scss';
+
+/* -- / Import -- */
+
 /* -- Common -- */
 * {
     box-sizing: border-box;
 }
-.section-outer { // внешний блок 
+li {
+    list-style: none;
+}
+a {
+    color: $color-white;
+    text-decoration: none;
+}
+ul {
+    padding: 0;
+}
+.section-outer { // внешний блок
     padding-left: 20px;
     padding-right: 20px;
 }
 .section-inner { // внутренний блок
-    max-width: 1639px;
+    max-width: 1110px;
     margin: 0 auto;
 }
+.inner-white {
+    color: $color-white;
+}
+.inner-black {
+    color: $color-black;
+    font-size: 16px;
+}
+.section-inner-header { // внутренний блок
+    max-width: 1560px;
+    margin: 0 auto;
+}
+.img {
+    display: block;
+}
 /* -- / Common -- */
-
+/*
 h1 {
    @include Circle;
+   color: red;
 }
 h2 {
     @include Plumb-medium;
@@ -22,3 +54,47 @@ h2 {
 p {
     @include Plumb-medium;
 }
+*/
+
+
+/* header 
+--------------------------------------------------------------------*/
+
+.section-header {
+    background: url('../img/header-bg.png') 100% 100% no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+.header {
+    &-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include Circle;
+    }
+    &-menu {
+        &__list {
+            display: flex;
+        }
+        &__list li:not(:first-child) {
+            margin-left: 47px;
+        }
+    }
+    &-right-bar {
+        display: flex;
+        align-items: center;
+        &__search,
+        &__language {
+            width: 20px;
+            height: 20px;
+        }
+        &__language {
+            margin-left: 70px;
+            margin-right: 11px;
+        }
+    }
+}
+
+
+/* / header (заголовок ленты)
+--------------------------------------------------------------------*/
