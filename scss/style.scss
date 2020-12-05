@@ -23,53 +23,84 @@ ul {
     padding-left: 20px;
     padding-right: 20px;
 }
-.section-inner { // внутренний блок
+/* -- Внутренние блоки -- */
+.section-inner {
     max-width: 1110px;
     margin: 0 auto;
 }
-.inner-white {
+.section-inner-header { // широкий
+    max-width: 1560px;
+    margin: 0 auto;
+}
+.inner-white {    
     color: $color-white;
 }
 .inner-black {
     color: $color-black;
     font-size: 16px;
 }
-.section-inner-header { // внутренний блок
-    max-width: 1560px;
-    margin: 0 auto;
+.inner-flex {
+    display: flex;
+    justify-content: space-between;
 }
+/* -- / Внутренние блоки -- */
 .img {
     display: block;
 }
 /* -- / Common -- */
-/*
+
 h1 {
-   @include Circle;
-   color: red;
+    @include Plumb-bold;
 }
-h2 {
+h2, h3 {
     @include Plumb-medium;
+    font-weight: 500;
 }
-
-p {
-    @include Plumb-medium;
+p, a {
+    @include Circle;
 }
-*/
-
+.icn {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 10px;
+    background: url('../img/Arrow.svg') 100% 100% no-repeat;
+    background-size: cover;
+}
+.icn-black {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 10px;
+    background: url('../img/Arrow-black.svg') 100% 100% no-repeat;
+    background-size: cover;
+}
 
 /* header 
 --------------------------------------------------------------------*/
-
 .section-header {
+    position: relative;
     background: url('../img/header-bg.png') 100% 100% no-repeat;
     background-size: cover;
     height: 800px;
 }
+.section-header:before {
+    position: absolute;
+    content: "";
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color-white;
+    opacity: 0.5;
+}
 .header {
+    /* -- Панель навигации -- */
     &-nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 90px;
         @include Circle;
     }
     &-menu {
@@ -93,8 +124,148 @@ p {
             margin-right: 11px;
         }
     }
+    /* -- Заголовок блока -- */
+    &-aside {
+        position: relative;
+        margin-top: 184px;
+        &__title {
+            font-size: 64px;
+        }
+        &__subtitle {
+            font-size: 24px;
+        }
+        &__link {}
+        &__icon {
+            top: 243px;
+            left: 100px;
+        }
+    }
+    /* -- Навигация по блокам -- */
+    &-wrapper {
+        display: grid;
+        grid-template-columns: 255px 255px;
+        grid-template-rows: 148px 175px;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 540px;
+        height: 353px;
+        margin-top: 304px;
+        &-item {
+            
+            background-color: seagreen;
+            &__title {
+                margin-top: 30px;
+                margin-left: 40px;
+                font-size: 21px;
+            }
+            &-link {
+                position: relative;
+                margin-left: 40px;
+                &__icon {
+                    top:7px;
+                    left: 92px;
+                }
+            }
+            
+        }
+    }
+}
+.i-one {
+    background-color: $color-brand-blue;
+}
+.i-two {
+    background-color: $color-brand-green;
+}
+.i-three {
+    background-color: $color-brand-yellow;
+}
+.i-four {
+    background-color: $color-brand-red;
+}
+
+/* / header (заголовок ленты)
+--------------------------------------------------------------------*/
+
+/* side menu 
+--------------------------------------------------------------------*/
+.section-side-menu {
+    background-color: $color-brand-blue;
+}
+.side-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 55px;
+    padding-bottom: 60px;
+}
+.side-column {
+    width: 190px;
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__link {
+        display: block;
+        margin-bottom: 15px;
+    }
+    &__link:hover {
+        color: $color-brand-yellow;
+        text-decoration: underline;
+    }
+}
+/* / side menu 
+--------------------------------------------------------------------*/
+
+/* events
+--------------------------------------------------------------------*/
+.section-events {
+    background-color: $color-brand-yellow;
+}
+.event-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+        font-size: 30px;
+        margin-top: 75px;
+        margin-bottom: 55px;
+    }
+    &-link {
+        display: block;
+        position: relative;
+        font-size: 21px;
+        margin-top: 75px;
+        margin-bottom: 55px;
+        padding-right: 50px;
+        color: $color-black;
+        text-decoration: underline;
+        &__icon {
+            top: 5px;
+            left: 170px;
+            width: 20px;
+        }
+    }
+}
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 79px;
+    &-item {
+        width: 350px;
+        &__data {
+            font-size: 14px;
+            margin: 20px 0 0 0;
+        }
+        &__title {
+            font-size: 21px;
+            margin: 10px 0;
+            color: $color-brand-red;
+        }
+        &__subtitle {
+            margin-top: 0;
+        }
+    }
 }
 
 
-/* / header (заголовок ленты)
+/* /events
 --------------------------------------------------------------------*/
